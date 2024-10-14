@@ -6,7 +6,7 @@ let tentativas = 1;
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', { rate: 1.2 });
 }
 
 function exibirMensagemInicial() {
@@ -39,17 +39,17 @@ function gerarNumeroAleatorio() {
     let numeroEscolhido = parseInt(Math.random() * n + 1);
     let quantidadeElementosLista = listaDeNumerosSorteados.length;
 
-    if (quantidadeElementosLista == n){
+    if (quantidadeElementosLista == n) {
         listaDeNumerosSorteados = [];
     }
 
-if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
-    return gerarNumeroAleatorio()
-} else {
-    listaDeNumerosSorteados.push(numeroEscolhido);
-    console.log(listaDeNumerosSorteados);
-    return numeroEscolhido;
-}
+    if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+    } else {
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados);
+        return numeroEscolhido;
+    }
 }
 
 function limparCampo() {
